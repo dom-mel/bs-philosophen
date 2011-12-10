@@ -38,9 +38,17 @@ breakatwhitespace=false        % sets if automatic breaks should only happen at 
 \section{Einleitung}
 Als Teil der Lehrveranstaltung \textit{Betriebssysteme Vertiefung} im Wintersemester 2011/2012 an der \textit{Beuth Hochschule für Technik Berlin} sollte im Rahmen einer Übung mithilfe der Programmiersprache C ein Programm geschrieben werden, welches das Problem der speisenden Philosophen , vorallem die Racecondition problematik, löst.
 
-\section{Lösung}
-Die Lösung basiert auf der Idee nicht mehr als vier Philosophen gleichzeitig an den Tisch zu lassen.
+\section{Problembeschreibung}
+
+Das Problem der speisenden Philosophen behandelt, auf die Informatik bezogen, den konkurrierenden Zugriff auf verschiedene Ressourcen. Das offensichtliche Problem ist ein Deadlock bzw. Verklemmung.
+Wenn alle Philosophen gleichzeitig die rechte Gabel nehmen und anfangen auf die linke Gabel zu warten entsteht das Problem das alle Endlos warten.
+
+\section{Lösungen}
+Die implementierte Lösung basiert auf der Idee nicht mehr als vier Philosophen gleichzeitig an den Tisch zu lassen.
 Technisch geschieht dies über eine Semaphore, welche mit der Anzahl
-der Philosophen - 1 initialisiert wird. Auf diese Weiße wird sichergestellt das mindestens ein Philosoph essen kann.
+der Philosophen - 1 initialisiert wird. Auf diese Weiße wird sichergestellt das mindestens ein Philosoph essen kann und das Programm so nicht zum Stillstand kommt.
+
+Eine Alternative Lösung ist es einen der Philosophen zum Linkshändler zu machen und ihn zuerst die linke statt der rechten Gabel nehmen zu lassen. Auf diese Weiße entsteht das Deadlock erst garnicht,
+da bei einem gleichzeitigen nehmen der ersten Gabel mindestens der Philosoph rechts neben dem Linkshändler essen kann.
 
 \end{document}
